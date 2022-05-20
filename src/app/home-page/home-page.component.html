@@ -1,0 +1,46 @@
+<div class="main-container bg-light">
+  <div class="container-fluid px-2">
+    <p fs-1 text-dark><b>Sort By</b></p>
+    <div class="card bg-light shadow-lg rounded">
+      <div class="row text-center py-1">
+        <div class="col">
+          <button
+            style="font-weight: 500"
+            (click)="callMyChild(1)"
+            [class.active]="num === 1"
+          >
+            DEPARTURE ⇅
+          </button>
+        </div>
+        <div class="col">
+          <button
+            style="font-weight: 500"
+            (click)="callMyChild(2)"
+            [class.active]="num === 2"
+          >
+            DURATION ⇅
+          </button>
+        </div>
+        <div class="col">
+          <button
+            style="font-weight: 500"
+            (click)="callMyChild(3)"
+            [class.active]="num === 3"
+          >
+            ARRIVAL ⇅
+          </button>
+        </div>
+        <div class="col">
+          <button
+            style="font-weight: 500"
+            (click)="callMyChild(4)"
+            [class.active]="num === 4"
+          >
+            PRICE ⇅
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-flight-details></app-flight-details>
+</div>
