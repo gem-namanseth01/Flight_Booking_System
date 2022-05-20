@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="card col-sm-6 mt-5 mx-auto d-block card-block card-bg">
+    <h1 class="text-center text-decoration-underline mt-3 mb-2">
+      <b>Login</b>
+    </h1>
+    <form class="card-body p-lg-5" #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          #name="ngModel"
+          class="form-control input-ht"
+          placeholder="username"
+          [(ngModel)]="loginUserModel.name"
+          required
+        />
+        <label for="username">Username</label>
+        <span
+          class="text-danger"
+          *ngIf="(form.submitted || name.touched) && name.invalid"
+        >
+          Please enter an username.
+        </span>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          [(ngModel)]="loginUserModel.password"
+          #password="ngModel"
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}"
+          required
+        />
+        <label for="password">Password</label>
+        <span
+          class="text-danger"
+          *ngIf="(form.submitted || password.touched) && password.invalid"
+        >
+          Please enter valid password.
+        </span>
+      </div>
+      <div class="container text-center">
+        <button type="submit" class="btn btn-primary mb-3 mt-4">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
