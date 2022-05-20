@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgModule } from '@angular/core';
 import { Login } from '../login';
 import { Router } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-log-in',
@@ -24,7 +25,7 @@ export class LogInComponent implements OnInit {
         this.loginUserModel.name === 'admin' &&
         this.loginUserModel.password === 'Admin@123'
       ) {
-        this.router.navigate(['/main-view']);
+        this.router.navigate(['/home-page']);
         // alert('Matched');
       } else {
         alert('Please enter correct credentials.');

@@ -8,9 +8,11 @@
         <input
           type="text"
           #name="ngModel"
-          class="form-control input-ht"
-          placeholder="username"
+          class="form-control"
+          id="username"
+          placeholder="Username"
           [(ngModel)]="loginUserModel.name"
+          name="name"
           required
         />
         <label for="username">Username</label>
@@ -25,8 +27,10 @@
         <input
           [(ngModel)]="loginUserModel.password"
           #password="ngModel"
+          name="password"
           type="password"
           class="form-control"
+          id="password"
           placeholder="Password"
           pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}"
           required
