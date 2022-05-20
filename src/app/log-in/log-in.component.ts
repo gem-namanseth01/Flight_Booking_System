@@ -17,16 +17,13 @@ export class LogInComponent implements OnInit {
   constructor(private router:Router) {}
   
   onSubmit(form: any) {
-    // console.log(form.valid);
     this.submitted = true;
     if (form.valid) {
-      // this.users.push(this.userModel);
       if (
         this.loginUserModel.name === 'admin' &&
         this.loginUserModel.password === 'Admin@123'
       ) {
         this.router.navigate(['/home-page']);
-        // alert('Matched');
       } else {
         alert('Please enter correct credentials.');
       }
