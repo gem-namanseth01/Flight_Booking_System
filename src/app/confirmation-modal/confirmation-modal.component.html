@@ -1,0 +1,54 @@
+<div class="modal-header">
+  <h4 class="modal-title w-100 text-center">Flight details</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <img
+    src="{{ 'assets/images/' + unit.logo }}"
+    width="100"
+    height="100"
+    class="img-thumbnail mx-auto d-block mb-3"
+  />
+  <div class="row">
+    <div class="col-4">
+      <h6>Flight name :</h6>
+    </div>
+    <div class="col float-start">{{ unit.name }}</div>
+  </div>
+  <div class="row">
+    <div class="col-4"><h6>From :</h6></div>
+    <div class="col">{{ unit.fromLg }}</div>
+  </div>
+  <div class="row">
+    <div class="col-4"><h6>To :</h6></div>
+    <div class="col">{{ unit.toLg }}</div>
+  </div>
+  <div class="row">
+    <div class="col-4"><h6>Ticket price :</h6></div>
+    <div class="col fw-bolder">
+      {{ unit.price | currency: "INR":"symbol":"4.0" }}
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="activeModal.close('Close click')"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="[activeModal.close('Ok click'), confirmation()]"
+    >
+      Proceed to pay
+    </button>
+  </div>
+</div>
